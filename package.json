@@ -1,0 +1,19 @@
+{
+  "name": "vectory",
+  "version": "1.0.0",
+  "description": "this is a vue project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4js/vectory.git"
+  },
+  "author": "4js",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4js/vectory/issues"
+  },
+  "homepage": "https://github.com/4js/vectory#readme"
+}
