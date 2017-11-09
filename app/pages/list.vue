@@ -1,10 +1,10 @@
 <template>
     <div>   
-        <h4>欢迎，登录成功！</h4>
+        <h4>这是列表页面</h4>
         <div class="nav">
             <h2>router nav example:</h2>
             <ul>
-                <li><router-link to="/list">list</router-link></li>
+                <li><router-link to="/login">login</router-link></li>
                 <li><router-link to="/content">content</router-link></li>
                 <li><router-link to="/home">home</router-link></li>
             </ul>
@@ -18,10 +18,10 @@
     import VueResource from 'vue-resource'
 
     export default {
-        name: 'login',
+        name: 'list',
         data () {
             return {
-                title:'登录'
+                title:'列表'
             }
         },
         mounted () {

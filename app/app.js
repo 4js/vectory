@@ -6,8 +6,8 @@ import VueRouter from 'vue-router'
 import store from './store' //引入vuex状态管理
 import title from './services/title'
 import routes from './routes'
-import '../element-ui/lib/theme-default/index.css' //element-ui组件样式
-import Elementui from '../element-ui/lib/index' //element-ui组件
+import '../node_modules/element-ui/lib/theme-default/index.css' //element-ui组件样式
+import Elementui from '../node_modules/element-ui/lib/index' //element-ui组件
 // import './scss/vendors/pace/pace.css' //加载页面的时候的等待
 // import './scss/app.scss' //全部scss
 import axios from 'axios'
