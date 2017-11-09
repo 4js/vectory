@@ -9,4 +9,8 @@
 
 ``npm install``
 
-``./run.sh``
+``npm run dev``
+
+``npm run build:test``
+
+``npm run build:prod``

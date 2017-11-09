@@ -4,7 +4,11 @@
     "description": "this is a vue project",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "./node_modules/.bin/webpack-dev-server --config=build/webpack.config.js --env=dev --port 8081 --open",
+        "build:test": "./node_modules/.bin/webpack --config=build/webpack.config --progress --colors --env=test",
+        "build:prod": "./node_modules/.bin/webpack --config=build/webpack.config --progress --colors --env=prod"
+
     },
     "repository": {
         "type": "git",
