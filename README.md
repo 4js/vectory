@@ -1,16 +1,29 @@
-* vectory
- this is a base project established of Vue 
- 
-* Author 4js
-* Contact macfeng8@126.com
+# vectory
 
+## Project setup
+```
+npm install
+```
 
-### Start step
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-``npm install``
+### Compiles and minifies for production
+```
+npm run build
+```
 
-``npm run dev``
+### Run your tests
+```
+npm run test
+```
 
-``npm run build:test``
+### Lints and fixes files
+```
+npm run lint
+```
 
-``npm run build:prod``
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
