@@ -28,4 +28,9 @@ str.split(str/regexp,maxLength) 字符串分割 支持正则
 
 ```
 let arr = [1, 2, 3, 4, 5]
+
+数组转换
+arr.join('|') //  1|2|3|4|5|6 数据转字符串 连接
+arr.sort(function(a,b){return a-b}) // 数组排序 改变原数组
+arr.reverse() // 数组反转 改变原数组
 ```
