@@ -1,7 +1,6 @@
 <template>
-  <div class="login-wrapper">
-    <p>登录页面</p>
-    <router-link to="/404">404页面</router-link>
+  <div class="cluster-wrapper">
+    <p>disk</p>
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'login',
+  name: 'disk',
 }
 </script>
 

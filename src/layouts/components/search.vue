@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .info-icon{
-        cursor: pointer;
+    .search-wrapper{
+        display: inline-block;
     }
 </style>

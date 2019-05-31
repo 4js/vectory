@@ -1,33 +1,79 @@
 <template>
     <div class="user-wrapper">
-        <a-search></a-search>
-        <a-dropdown :trigger="['click']">
-            <a-icon class="info-icon" type="mail" />
-            <a-menu slot="overlay">
-            <a-menu-item key="0">
-                <a href="http://www.alipay.com/">1st menu item</a>
-            </a-menu-item>
-            <a-menu-item key="1">
-                <a href="http://www.taobao.com/">2nd menu item</a>
-            </a-menu-item>
-            <a-menu-divider />
-            <a-menu-item key="3">3rd menu item</a-menu-item>
-            </a-menu>
-        </a-dropdown>
+    <div class="content-box">
+      <a href="https://pro.loacg.com/docs/getting-started" target="_blank">
+        <span class="action">
+          <a-icon type="question-circle-o"></a-icon>
+        </span>
+      </a>
+      <!-- <notice-icon class="action"/> -->
+      <a-dropdown>
+        <span class="action ant-dropdown-link user-dropdown-menu">
+          <a-avatar class="avatar" icon="user" size="small" />
+          <span>{{ username }}</span>
+        </span>
+        <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
+          <a-menu-item key="0">
+            <router-link :to="{ name: 'center' }">
+              <a-icon type="user"/>
+              <span>个人中心</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="1">
+            <router-link :to="{ name: 'settings' }">
+              <a-icon type="setting"/>
+              <span>账户设置</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-divider/>
+          <a-menu-item key="3">
+            <a href="javascript:;">
+              <a-icon type="logout"/>
+              <span>退出登录</span>
+            </a>
+          </a-menu-item>
+        </a-menu>
+      </a-dropdown>
     </div>
+  </div>
 </template>
 <script>
-import ASearch from './search'
 export default {
   data(){
     return {
+        username: 'admin'
     }
-  },
-  components: { ASearch }
+  }
 }
 </script>
 <style lang="scss" scoped>
-    .info-icon{
+    .user-wrapper {
+      float: right;
+      height: 100%;
+
+      .action {
         cursor: pointer;
+        padding: 0 12px;
+        display: inline-block;
+        transition: all 0.3s;
+        height: 100%;
+        color: rgba(0, 0, 0, 0.65);
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.025);
+        }
+
+        .avatar {
+          margin: 20px 8px 20px 0;
+          color: #1890ff;
+        //   background: hsla(0, 0%, 100%, 0.85);
+          vertical-align: middle;
+        }
+
+        .icon {
+          font-size: 16px;
+          padding: 4px;
+        }
+      }
     }
 </style>

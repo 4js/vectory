@@ -5,20 +5,38 @@
       collapsible
       v-model="collapsed"
     >
-      <a-logo></a-logo>
+      <a-logo :collapsed="collapsed"></a-logo>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['1']">
-        <a-menu-item key="1">
-          <a-icon type="user" />
-          <span>nav 1</span>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <a-icon type="video-camera" />
-          <span>nav 2</span>
-        </a-menu-item>
-        <a-menu-item key="3">
-          <a-icon type="upload" />
-          <span>nav 3</span>
-        </a-menu-item>
+        <a-sub-menu key="sub2">
+            <span slot="title"><a-icon type="appstore" /><span>资源管理</span></span>
+            <a-menu-item key="/resource/cluster">
+                <router-link to="/resource/cluster">集群全貌</router-link>
+            </a-menu-item>
+            <a-menu-item key="/resource/server">
+                <router-link to="/resource/server">服务器</router-link>
+            </a-menu-item>
+            <a-menu-item key="/resource/disk">
+                <router-link to="/resource/disk">硬盘</router-link>
+            </a-menu-item>
+            <a-menu-item key="/resource/device">
+                <router-link to="/resource/device">设备组</router-link>
+            </a-menu-item>
+            <a-menu-item key="/resource/pool">
+                <router-link to="/resource/pool">存储池</router-link>
+            </a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="sub3">
+            <span slot="title"><a-icon type="setting" /><span>存储服务</span></span>
+            <a-menu-item key="6">块存储</a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="sub4">
+            <span slot="title"><a-icon type="setting" /><span>数据安全</span></span>
+            <a-menu-item key="7">秘钥管理</a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="sub5">
+            <span slot="title"><a-icon type="setting" /><span>基础配置</span></span>
+            <a-menu-item key="8">集群参数管理</a-menu-item>
+        </a-sub-menu>
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -37,7 +55,8 @@
         </a-row>
       </a-layout-header>
       <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
-        <router-view />
+          <a-page-header :route="$route"></a-page-header>
+          <router-view />
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -45,13 +64,14 @@
 <script>
 import ALogo from './components/logo'
 import AUser from './components/user'
+import APageHeader from '../components/PageHeader'
 export default {
   data(){
     return {
       collapsed: false,
     }
   },
-  components: { ALogo, AUser }
+  components: { ALogo, AUser, APageHeader }
 }
 </script>
 <style lang="scss" scoped>

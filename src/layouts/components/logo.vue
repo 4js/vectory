@@ -1,6 +1,7 @@
 <template>
     <div class="logo">
-        <img src="../../assets/img/goke.png" />
+        <img v-if="collapsed" src="../../assets/img/logo-light.png" />
+        <img v-else src="../../assets/img/goke.png" />
     </div>
 </template>
 <script>
@@ -9,6 +10,12 @@ export default {
     return {
     }
   },
+  props: {
+    collapsed: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

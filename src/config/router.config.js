@@ -32,25 +32,53 @@ export const constantRouterMap = [
 //   },
 
   {
-    path: '/dashboard',
+    path: '/resource',
     component: BasicLayouts,
-    redirect: '/dashboard/home',
+    name: '资源管理',
+    redirect: '/resource/cluster',
     children: [
       {
-        path: 'home',
-        name: 'TestHome',
-        component: () => import('@/views/dashboard/index')
+        path: 'cluster',
+        name: '集群全貌',
+        component: () => import('@/views/resource/cluster/index')
+      },
+      {
+        path: 'server',
+        name: '服务器',
+        component: () => import('@/views/resource/server/index')
+      },
+      {
+        path: 'disk',
+        name: '硬盘',
+        component: () => import('@/views/resource/disk/index')
+      },
+      {
+        path: 'device',
+        name: '设备组',
+        component: () => import('@/views/resource/device/index')
+      },
+      {
+        path: 'pool',
+        name: '存储池',
+        component: () => import('@/views/resource/pool/index')
       }
     ]
   },
-
+  {
+    path: '/',
+    redirect: '/resource/cluster'
+  },
   {
     path: '/404',
     component: () => import(/* webpackChunkName: "fail" */ '@/views/exception/404')
   },
   {
     path: '/login',
-    component: () => import(/* webpackChunkName: "fail" */ '@/views/login/index')
+    component: () => import(/* webpackChunkName: "fail" */ '@/views/user/login')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "fail" */ '@/views/user/register')
   }
-
 ]
