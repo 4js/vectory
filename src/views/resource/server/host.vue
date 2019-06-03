@@ -1,22 +1,52 @@
 <template>
   <div class="cluster-wrapper">
     <a-table :dataSource="data">
+    <a-table-column title="主机名" dataIndex="name" key="name"/>
+    <a-table-column title="状态" dataIndex="status" key="status"/>
+    <a-table-column title="类型" dataIndex="type" key="type"/>
+    <a-table-column title="厂家" dataIndex="factory" key="factory"/>
+    <a-table-column title="CPU" dataIndex="cpu" key="cpu"/>
     <a-table-column
-      title="Name"
-      dataIndex="Name"
-      key="Name"
-    />
+      title="服务"
+      dataIndex="service"
+      key="service"
+    >
+        <template slot-scope="service">
+            <span>
+            <a-tag v-for="tag in service" color="blue" :key="tag">{{tag}}</a-tag>
+            </span>
+        </template>
+    </a-table-column>
     <a-table-column
-      title="Age"
-      dataIndex="age"
-      key="age"
-    />
+      title="角色"
+      dataIndex="role"
+      key="role"
+    >
+        <template slot-scope="role">
+            <span>
+            <a-tag v-for="tag in role" color="blue" :key="tag">{{tag}}</a-tag>
+            </span>
+        </template>
+    </a-table-column>
     <a-table-column
-      title="Address"
-      dataIndex="address"
-      key="address"
-    />
+      title="CPU利用率"
+      dataIndex="cpuUsed"
+      key="cpuUsed"
+    >
+        <template slot-scope="cpuUsed">
+            <a-progress :percent="cpuUsed" size="small" status="active" />
+        </template>
+    </a-table-column>
     <a-table-column
+      title="系统盘使用"
+      dataIndex="systemUsed"
+      key="systemUsed"
+    >
+        <template slot-scope="systemUsed">
+            <a-progress :percent="systemUsed" size="small" status="active" />
+        </template>
+    </a-table-column>
+    <!-- <a-table-column
       title="Tags"
       dataIndex="tags"
       key="tags"
@@ -26,7 +56,7 @@
           <a-tag v-for="tag in tags" color="blue" :key="tag">{{tag}}</a-tag>
         </span>
       </template>
-    </a-table-column>
+    </a-table-column> -->
     <a-table-column
       title="Action"
       key="action"
@@ -46,25 +76,40 @@
 <script>
 const data = [{
   key: '1',
-  Name: 'John',
-  lastName: 'Brown',
-  age: 32,
-  address: 'New York No. 1 Lake Park',
+  name: 'John',
+  status: 'online',
+  type: 'VirtualBox',
+  factory: 'innotek GmbH',
+  cpu: 2,
+  service: ['网关', '监控'],
+  role: ['网关', '监控', '存储服务器'],
+  cpuUsed: 56,
+  systemUsed: 32,
   tags: ['nice', 'developer'],
 }, {
   key: '2',
-  Name: 'Jim',
-  lastName: 'Green',
-  age: 42,
-  address: 'London No. 1 Lake Park',
-  tags: ['loser'],
+  name: 'John',
+  status: 'online',
+  type: 'VirtualBox',
+  factory: 'innotek GmbH',
+  cpu: 2,
+  service: ['网关', '监控'],
+  role: ['网关', '监控', '存储服务器'],
+  cpuUsed: 56,
+  systemUsed: 32,
+  tags: ['nice', 'developer'],
 }, {
   key: '3',
-  Name: 'Joe',
-  lastName: 'Black',
-  age: 32,
-  address: 'Sidney No. 1 Lake Park',
-  tags: ['cool', 'teacher'],
+  name: 'John',
+  status: 'online',
+  type: 'VirtualBox',
+  factory: 'innotek GmbH',
+  cpu: 2,
+  service: ['网关', '监控'],
+  role: ['网关', '监控', '存储服务器'],
+  cpuUsed: 56,
+  systemUsed: 32,
+  tags: ['nice', 'developer'],
 }];
 export default {
   name: 'host',
