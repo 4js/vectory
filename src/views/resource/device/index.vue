@@ -1,15 +1,20 @@
 <template>
   <div class="cluster-wrapper">
-    <p>device</p>
+    <router-view/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'device',
-}
+  name: "device",
+  data() {
+    return {
+      
+    };
+  },
+  methods: {
+  }
+};
 </script>
 
 <style>

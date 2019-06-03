@@ -7,29 +7,29 @@ import { BasicLayouts } from '@/layouts'
  * @type { *[] }
  */
 export const constantRouterMap = [
-//   {
-//     path: '/user',
-//     component: UserLayout,
-//     redirect: '/user/login',
-//     hidden: true,
-//     children: [
-//       {
-//         path: 'login',
-//         name: 'login',
-//         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
-//       },
-//       {
-//         path: 'register',
-//         name: 'register',
-//         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
-//       },
-//       {
-//         path: 'register-result',
-//         name: 'registerResult',
-//         component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
-//       }
-//     ]
-//   },
+  //   {
+  //     path: '/user',
+  //     component: UserLayout,
+  //     redirect: '/user/login',
+  //     hidden: true,
+  //     children: [
+  //       {
+  //         path: 'login',
+  //         name: 'login',
+  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
+  //       },
+  //       {
+  //         path: 'register',
+  //         name: 'register',
+  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
+  //       },
+  //       {
+  //         path: 'register-result',
+  //         name: 'registerResult',
+  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
+  //       }
+  //     ]
+  //   },
 
   {
     path: '/resource',
@@ -55,7 +55,20 @@ export const constantRouterMap = [
       {
         path: 'device',
         name: '设备组',
-        component: () => import('@/views/resource/device/index')
+        redirect: '/resource/device/index',
+        component: () => import('@/views/resource/device/index'),
+        children: [
+          {
+            path: 'index',
+            name: '设备组',
+            component: () => import('@/views/resource/device/list')
+          },
+          {
+            path: 'add',
+            name: '添加设备组',
+            component: () => import('@/views/resource/device/add')
+          }
+        ]
       },
       {
         path: 'pool',

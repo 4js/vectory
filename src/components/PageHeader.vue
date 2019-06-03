@@ -1,8 +1,10 @@
 <template>
   <div class="page-header">
     <a-breadcrumb>
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item v-for="(item, index) in route.matched" :key="index"><a :href="item.path">{{item.name}}</a></a-breadcrumb-item>
+      <a-breadcrumb-item>Home</a-breadcrumb-item>
+      <a-breadcrumb-item v-for="(item, index) in route.matched" :key="index">
+        <router-link :to="item.path">{{item.name}}</router-link>
+      </a-breadcrumb-item>
     </a-breadcrumb>
   </div>
 </template>
@@ -11,17 +13,17 @@
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'PageHeader',
+  name: "PageHeader",
   props: {
-      route: {
-          type: Object
-      }
+    route: {
+      type: Object
+    }
   }
-}
+};
 </script>
 
 <style>
-.page-header{
-    margin-bottom: 30px;
+.page-header {
+  margin-bottom: 30px;
 }
 </style>
