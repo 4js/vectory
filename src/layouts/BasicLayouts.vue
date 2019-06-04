@@ -2,8 +2,8 @@
   <a-layout id="basic-layouts" :style="{ height: '100vh' }">
     <a-layout-sider :trigger="null" collapsible v-model="collapsed">
       <a-logo :collapsed="collapsed"></a-logo>
-      <a-menu theme="dark" mode="inline" :defaultSelectedKeys="selectedKeys">
-        <a-sub-menu key="/resource">
+      <a-menu theme="dark" mode="inline" :selectedKeys="selectedKeys" :openKeys="openKeys" @select="menuChange">
+        <a-sub-menu key="/resource" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="appstore"/>
             <span>资源管理</span>
@@ -24,26 +24,32 @@
             <router-link to="/resource/pool">存储池</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="sub3">
+        <a-sub-menu key="/storage" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="setting"/>
             <span>存储服务</span>
           </span>
-          <a-menu-item key="6">块存储</a-menu-item>
+          <a-menu-item key="/storage/block">
+            <router-link to="/storage/block">块存储</router-link>
+          </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="sub4">
+        <a-sub-menu key="/protect" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="setting"/>
             <span>数据安全</span>
           </span>
-          <a-menu-item key="7">秘钥管理</a-menu-item>
+          <a-menu-item key="/protect/key">
+            <router-link to="/protect/key">秘钥管理</router-link>
+          </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="sub5">
+        <a-sub-menu key="/config" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="setting"/>
             <span>基础配置</span>
           </span>
-          <a-menu-item key="8">集群参数管理</a-menu-item>
+          <a-menu-item key="/config/parameter">
+            <router-link to="/config/parameter">集群参数管理</router-link>
+          </a-menu-item>
         </a-sub-menu>
       </a-menu>
     </a-layout-sider>
@@ -85,31 +91,21 @@ export default {
   },
   methods: {
     /*
-     *  菜单切换 更新选中
+     *  select meun item
      */
-    // menuChange(v) {
-    //   /* eslint-disable */    this.openKeys = [this.$route.matched[0].path];
-    //   console.log(v)    this.openKeys = [this.$route.matched[0].path];
-    //   this.selectedKeys = [v.ke    this.openKeys = [this.$route.matched[0].path];y];
-    //   // this.openKeys = [this.    this.openKeys = [this.$route.matched[0].path];$route.matched[0].path];
-    // }
+    menuChange(v) {
+      this.selectedKeys = [v.key];    
+    },
+    /*
+     *  click dropmenu 
+     */
+    itemChange (v) {
+      this.openKeys = [v.key];
+    }
   },
   mounted() {
-    /* eslint-disable */
-    console.log(this.$route)
-    // const routes = this.$route.matched.concat();
-    // const { hidden } = this.$route.meta;
-    // if (routes.length >= 3) {
-    //   routes.pop();
-    //   this.selectedKeys = [routes[routes.length - 1].path];
-    // } else {
-    //   this.selectedKeys = [routes.pop().path];
-    // }
-    // const openKeys = [];
-    // console.log([this.$route.matched[0].path]);
-    // console.log([this.$route.matched[1].path]);
-    // this.selectedKeys = [this.$route.matched[1].path];
-    // this.openKeys = [this.$route.matched[0].path];
+    this.selectedKeys = [this.$route.matched[1].path];
+    this.openKeys = [this.$route.matched[0].path];
   },
   components: { ALogo, AUser, APageHeader }
 };

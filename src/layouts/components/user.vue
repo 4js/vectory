@@ -27,7 +27,7 @@
           </a-menu-item>
           <a-menu-divider/>
           <a-menu-item key="3">
-            <a href="javascript:;">
+            <a href="javascript:;" @click="logout">
               <a-icon type="logout"/>
               <span>退出登录</span>
             </a>
@@ -43,6 +43,21 @@ export default {
     return {
       username: "admin"
     };
+  },
+  methods: {
+    logout () {
+      
+    },
+    logoutSuccess () {
+      // 延迟 1 秒显示欢迎信息
+      setTimeout(() => {
+        this.$notification.success({
+          message: '成功',
+          description: '退出登录成功，欢迎再来'
+        })
+        this.$router.push('/login')
+      }, 1000)
+    }
   }
 };
 </script>

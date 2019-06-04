@@ -1,5 +1,7 @@
 # vectory
 
+this is a manage project, base of Vue and ant-design-vue framework.
+
 ## Project setup
 ```
 npm install

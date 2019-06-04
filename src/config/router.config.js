@@ -78,6 +78,45 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: '/storage',
+    component: BasicLayouts,
+    name: '存储服务',
+    redirect: '/storage/block',
+    children: [
+      {
+        path: 'block',
+        name: '块存储',
+        component: () => import('@/views/storage/block/index')
+      }
+    ]
+  },
+  {
+    path: '/config',
+    component: BasicLayouts,
+    name: '基础配置',
+    redirect: '/config/parameter',
+    children: [
+      {
+        path: 'parameter',
+        name: '集群参数管理',
+        component: () => import('@/views/config/parameter/index')
+      }
+    ]
+  },
+  {
+    path: '/protect',
+    component: BasicLayouts,
+    name: '数据安全',
+    redirect: '/protect/key',
+    children: [
+      {
+        path: 'key',
+        name: '秘钥管理',
+        component: () => import('@/views/protect/key/index')
+      }
+    ]
+  },
+  {
     path: '/',
     redirect: '/resource/cluster'
   },
