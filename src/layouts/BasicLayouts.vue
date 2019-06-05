@@ -100,7 +100,11 @@ export default {
      *  click dropmenu 
      */
     itemChange (v) {
-      this.openKeys = [v.key];
+      if (this.openKeys[0] === v.key) {
+        this.openKeys = []
+      } else {
+        this.openKeys = [v.key];
+      }
     }
   },
   mounted() {

@@ -5,7 +5,7 @@
       <a-table-column title="状态" data-index="status" key="status"/>
       <a-table-column title="类型" data-index="type" key="type"/>
       <a-table-column title="厂家" data-index="factory" key="factory"/>
-      <a-table-column title="CPU" data-index="cpu" key="cpu"/>
+      <a-table-column title="CPU" data-index="cpu" key="cpu" :sorter="numSorter" />
       <a-table-column title="服务" data-index="service" key="service">
         <template slot-scope="service">
           <span>
@@ -62,7 +62,7 @@ const data = [
     status: "online",
     type: "VirtualBox",
     factory: "innotek GmbH",
-    cpu: 2,
+    cpu: 3,
     service: ["网关", "监控"],
     role: ["网关", "监控", "存储服务器"],
     cpuUsed: 56,
@@ -88,7 +88,7 @@ const data = [
     status: "online",
     type: "VirtualBox",
     factory: "innotek GmbH",
-    cpu: 2,
+    cpu: 8,
     service: ["网关", "监控"],
     role: ["网关", "监控", "存储服务器"],
     cpuUsed: 56,
@@ -102,6 +102,12 @@ export default {
     return {
       data
     };
+  },
+  methods: {
+    numSorter (a,b) {
+      /* eslint-disable */
+      return a.cpu - b.cpu
+    }
   }
 };
 </script>

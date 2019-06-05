@@ -38,6 +38,8 @@
   </div>
 </template>
 <script>
+// import loading from '../../mixins/loading'
+import { setTimeout } from 'timers';
 export default {
   data() {
     return {
@@ -46,7 +48,9 @@ export default {
   },
   methods: {
     logout () {
-      
+      /* eslint-disable */
+      // console.log(this.rootParent)
+      this.logoutSuccess()
     },
     logoutSuccess () {
       // 延迟 1 秒显示欢迎信息
@@ -56,7 +60,8 @@ export default {
           description: '退出登录成功，欢迎再来'
         })
         this.$router.push('/login')
-      }, 1000)
+        // this.rootParent.loadingEnd()
+      }, 3000)
     }
   }
 };

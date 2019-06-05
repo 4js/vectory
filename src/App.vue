@@ -1,14 +1,29 @@
 <template>
   <div id="app">
+    <a-spin :spinning="loading"></a-spin>
     <router-view />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      loading: false
+    }
+  },
+  methods: {
+    loadingStart () {
+      /* eslint-disable */
+      console.log(1)
+      this.loading = true
+    },
+    loadingEnd () {
+      this.loading = false
+    }
+  }
 }
 </script>
 

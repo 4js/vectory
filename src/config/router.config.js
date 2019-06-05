@@ -35,37 +35,44 @@ export const constantRouterMap = [
     path: '/resource',
     component: BasicLayouts,
     name: '资源管理',
+    meta: { title: '资源管理' },
     redirect: '/resource/cluster',
     children: [
       {
         path: 'cluster',
         name: '集群全貌',
+        meta: { title: '集群全貌' },
         component: () => import('@/views/resource/cluster/index')
       },
       {
         path: 'server',
         name: '服务器',
+        meta: { title: '服务器' },
         component: () => import('@/views/resource/server/index')
       },
       {
         path: 'disk',
         name: '硬盘',
+        meta: { title: '硬盘' },
         component: () => import('@/views/resource/disk/index')
       },
       {
         path: 'device',
         name: '设备组',
+        meta: { title: '设备组' },
         redirect: '/resource/device/index',
         component: () => import('@/views/resource/device/index'),
         children: [
           {
             path: 'index',
             name: '设备组',
+            meta: { title: '设备组' },
             component: () => import('@/views/resource/device/list')
           },
           {
             path: 'add',
             name: '添加设备组',
+            meta: { title: '添加设备组' },
             component: () => import('@/views/resource/device/add')
           }
         ]
@@ -73,6 +80,7 @@ export const constantRouterMap = [
       {
         path: 'pool',
         name: '存储池',
+        meta: { title: '存储池' },
         component: () => import('@/views/resource/pool/index')
       }
     ]
@@ -81,11 +89,13 @@ export const constantRouterMap = [
     path: '/storage',
     component: BasicLayouts,
     name: '存储服务',
+    meta: { title: '存储服务' },
     redirect: '/storage/block',
     children: [
       {
         path: 'block',
         name: '块存储',
+        meta: { title: '块存储' },
         component: () => import('@/views/storage/block/index')
       }
     ]
@@ -94,11 +104,13 @@ export const constantRouterMap = [
     path: '/config',
     component: BasicLayouts,
     name: '基础配置',
+    meta: { title: '基础配置' },
     redirect: '/config/parameter',
     children: [
       {
         path: 'parameter',
         name: '集群参数管理',
+        meta: { title: '集群参数管理' },
         component: () => import('@/views/config/parameter/index')
       }
     ]
@@ -107,11 +119,13 @@ export const constantRouterMap = [
     path: '/protect',
     component: BasicLayouts,
     name: '数据安全',
+    meta: { title: '数据安全' },
     redirect: '/protect/key',
     children: [
       {
         path: 'key',
         name: '秘钥管理',
+        meta: { title: '秘钥管理' },
         component: () => import('@/views/protect/key/index')
       }
     ]
@@ -126,11 +140,13 @@ export const constantRouterMap = [
   },
   {
     path: '/login',
+    meta: { title: '用户登录' },
     component: () => import(/* webpackChunkName: "fail" */ '@/views/user/login')
   },
   {
     path: '/register',
     name: 'register',
+    meta: { title: '用户注册' },
     component: () => import(/* webpackChunkName: "fail" */ '@/views/user/register')
   }
 ]
