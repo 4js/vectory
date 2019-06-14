@@ -69,7 +69,7 @@
         </a-row>
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '480px' }"
+        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '100vh' }"
       >
         <a-page-header :route="$route"></a-page-header>
         <router-view/>

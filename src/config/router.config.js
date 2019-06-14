@@ -7,29 +7,29 @@ import { BasicLayouts } from '@/layouts'
  * @type { *[] }
  */
 export const constantRouterMap = [
-  //   {
-  //     path: '/user',
-  //     component: UserLayout,
-  //     redirect: '/user/login',
-  //     hidden: true,
-  //     children: [
-  //       {
-  //         path: 'login',
-  //         name: 'login',
-  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
-  //       },
-  //       {
-  //         path: 'register',
-  //         name: 'register',
-  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
-  //       },
-  //       {
-  //         path: 'register-result',
-  //         name: 'registerResult',
-  //         component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
-  //       }
-  //     ]
-  //   },
+    // {
+    //   path: '/user',
+    //   component: UserLayout,
+    //   redirect: '/user/login',
+    //   hidden: true,
+    //   children: [
+    //     {
+    //       path: 'login',
+    //       name: 'login',
+    //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
+    //     },
+    //     {
+    //       path: 'register',
+    //       name: 'register',
+    //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
+    //     },
+    //     {
+    //       path: 'register-result',
+    //       name: 'registerResult',
+    //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
+    //     }
+    //   ]
+    // },
 
   {
     path: '/resource',
@@ -142,6 +142,21 @@ export const constantRouterMap = [
     path: '/login',
     meta: { title: '用户登录' },
     component: () => import(/* webpackChunkName: "fail" */ '@/views/user/login')
+  },
+  {
+    path: '/user',
+    component: BasicLayouts,
+    name: '首页',
+    meta: { title: '首页' },
+    redirect: '/user/center',
+    children: [
+      {
+        path: 'center',
+        name: '个人中心',
+        meta: { title: '个人中心' },
+        component: () => import(/* webpackChunkName: "fail" */ '@/views/user/center')
+      }
+    ]
   },
   {
     path: '/register',
