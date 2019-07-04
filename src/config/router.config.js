@@ -132,7 +132,7 @@ export const constantRouterMap = [
   },
   {
     path: '/',
-    redirect: '/resource/cluster'
+    redirect: '/dashboard'
   },
   {
     path: '/404',
@@ -142,6 +142,22 @@ export const constantRouterMap = [
     path: '/login',
     meta: { title: '用户登录' },
     component: () => import(/* webpackChunkName: "fail" */ '@/views/user/login')
+  },
+  {
+    path: '/dashboard',
+    component: BasicLayouts,
+    name: '首页',
+    meta: { title: '首页' },
+    redirect: '/dashboard',
+    children: [
+      {
+        path: '',
+        name: '概览',
+        meta: { title: '概览' },
+        component: () => import('@/views/dashboard/index')
+      }
+    ]
+    // component: () => import(/* webpackChunkName: "fail" */ '@/views/dashboard/index')
   },
   {
     path: '/user',

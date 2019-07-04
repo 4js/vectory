@@ -3,6 +3,12 @@
     <a-layout-sider :trigger="null" collapsible v-model="collapsed">
       <a-logo :collapsed="collapsed"></a-logo>
       <a-menu theme="dark" mode="inline" :selectedKeys="selectedKeys" :openKeys="openKeys" @select="menuChange">
+        <a-menu-item key="/dashboard">
+          <router-link to="/dashboard">
+            <a-icon type="pie-chart" />
+            <span>概览</span>
+          </router-link>
+        </a-menu-item>
         <a-sub-menu key="/resource" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="appstore"/>
@@ -54,7 +60,7 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
+      <a-layout-header style="background: #fff; padding: 0; minHeight: '100vh'">
         <a-row>
           <a-col class="gutter-row" :span="12">
             <a-icon
@@ -69,7 +75,7 @@
         </a-row>
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '100vh' }"
+        :style="{ margin: '24px 16px' }"
       >
         <a-page-header :route="$route"></a-page-header>
         <router-view/>

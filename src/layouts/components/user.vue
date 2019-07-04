@@ -61,7 +61,7 @@ export default {
         })
         this.$router.push('/login')
         // this.rootParent.loadingEnd()
-      }, 3000)
+      }, 1000)
     }
   }
 };

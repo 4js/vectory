@@ -1,7 +1,7 @@
 <template>
-  <div class="page-header">
+  <div class="page-header" v-if="route.path !== '/dashboard'">
     <a-breadcrumb>
-      <a-breadcrumb-item>Home</a-breadcrumb-item>
+      <a-breadcrumb-item><router-link to="/dashboard">首页</router-link></a-breadcrumb-item>
       <a-breadcrumb-item v-for="(item, index) in route.matched" :key="index">
         <router-link :to="item.path">{{item.name}}</router-link>
       </a-breadcrumb-item>

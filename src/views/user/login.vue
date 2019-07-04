@@ -1,5 +1,6 @@
 <template>
   <div class="login-wrapper">
+    <div class="logo-img"><img src="../../assets/img/logo.png" alt=""></div>
     <div class="login-box">
       <a-form
         id="formLogin"
@@ -8,6 +9,7 @@
         :form="form"
         @submit="handleSubmit"
       >
+        <h2 class="login-tit">Sichuan Airlines BigData Plat</h2>
         <a-form-item>
           <a-input
             size="large"
@@ -35,16 +37,16 @@
             <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
           </a-input>
         </a-form-item>
-        <a-form-item>
-          <a-checkbox v-decorator="['rememberMe']">自动登录</a-checkbox>
+        <!-- <a-form-item>
+          <a-checkbox v-decorator="['rememberMe']" style="color: #fff;">自动登录</a-checkbox>
           <router-link
             :to="{ name: 'recover', params: { user: 'aaa'} }"
             class="forge-password"
-            style="float: right;"
+            style="float: right;color: #fff;"
           >忘记密码</router-link>
-        </a-form-item>
+        </a-form-item> -->
 
-        <a-form-item style="margin-top:24px">
+        <a-form-item style="margin-top:40px">
           <a-button
             size="large"
             type="primary"
@@ -52,12 +54,12 @@
             class="login-button"
             :loading="state.loginBtn"
             :disabled="state.loginBtn"
-          >确定</a-button>
+          >登录</a-button>
         </a-form-item>
 
-        <div class="user-login-other">
+        <!-- <div class="user-login-other">
           <router-link class="register" :to="{ name: 'register' }">注册账户</router-link>
-        </div>
+        </div> -->
       </a-form>
     </div>
   </div>
@@ -139,16 +141,34 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  .logo-img{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    img{
+      height: 45px;
+    }
+  }
   .login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
     width: 350px;
     height: 100%;
-    padding: 180px 40px;
     background-color: rgba(0, 0, 0, 0.4);
   }
 }
 .user-layout-login {
+  width: 280px;
+  height: 250px;
+  .login-tit{
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
   label {
     font-size: 14px;
   }
@@ -190,6 +210,7 @@ export default {
 
     .register {
       float: right;
+      color: #fff;
     }
   }
 }

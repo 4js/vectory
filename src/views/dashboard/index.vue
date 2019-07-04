@@ -1,16 +1,23 @@
 <template>
   <div class="dashboard-wrapper">
-    <p>dashboard</p>
+    <Aoverview></Aoverview>
+    <Aticket></Aticket>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
+import Aoverview from './components/overview.vue'
+import Aticket from './components/ticket.vue'
 export default {
   name: 'dashboard',
+  components: {
+    Aoverview,
+    Aticket
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.dashboard-wrapper{
+}
 </style>

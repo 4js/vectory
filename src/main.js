@@ -9,7 +9,7 @@ Vue.use(Antd)
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  setDocumentTitle(`${to.meta.title}-分布式存储系统`)
+  setDocumentTitle(`${to.meta.title}-四川航空大数据平台`)
   next()
 })
 

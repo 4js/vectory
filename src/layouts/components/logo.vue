@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
-    <img src="../../assets/img/nuxt-emoji-white.png">
-    <span v-if="!collapsed">大数据决策系统</span>
+    <img v-if="collapsed" src="../../assets/img/logo-mini.png">
+    <img v-else src="../../assets/img/logo.png">
   </div>
 </template>
 <script>
