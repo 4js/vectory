@@ -133,14 +133,19 @@ export default {
 .login-wrapper{
   width: 100%;
   min-height: 100%;
-  background: #f0f2f5 url(../../assets/background.svg) no-repeat 50%;
-  background-size: 100%;
-  padding: 180px 0 144px;
+  background: #f0f2f5 url(../../assets/img/bg2.jpg);
+  // background-size: cover;
+  padding: 0;
   position: relative;
   display: flex;
   justify-content: center;
   .login-box{
-    width: 400px;
+    position: absolute;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    padding: 180px 40px;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 .user-layout-login {

@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
-    <img v-if="collapsed" src="../../assets/img/logo-light.png">
-    <img v-else src="../../assets/img/goke.png">
+    <img src="../../assets/img/nuxt-emoji-white.png">
+    <span v-if="!collapsed">大数据决策系统</span>
   </div>
 </template>
 <script>
@@ -24,6 +24,11 @@ export default {
   margin: 16px;
   img {
     height: 32px;
+  }
+  span{
+    color: #eee;
+    padding-left: 15px;
+    line-height: 30px;
   }
 }
 </style>
