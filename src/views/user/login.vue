@@ -14,7 +14,7 @@
           <a-input
             size="large"
             type="text"
-            placeholder="账户: admin"
+            placeholder="username"
             v-decorator="[
               'username',
               {rules: [{ required: true, message: '请输入帐户名或邮箱地址' }], validateTrigger: 'change'}
@@ -28,7 +28,7 @@
             size="large"
             type="password"
             autocomplete="false"
-            placeholder="密码: admin or ant.design"
+            placeholder="password"
             v-decorator="[
               'password',
               {rules: [{ required: true, message: '请输入密码' }], validateTrigger: 'blur'}

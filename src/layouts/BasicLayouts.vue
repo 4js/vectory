@@ -5,56 +5,134 @@
       <a-menu theme="dark" mode="inline" :selectedKeys="selectedKeys" :openKeys="openKeys" @select="menuChange">
         <a-menu-item key="/dashboard">
           <router-link to="/dashboard">
-            <a-icon type="pie-chart" />
+            <a-icon type="dashboard" />
             <span>概览</span>
           </router-link>
         </a-menu-item>
         <a-sub-menu key="/resource" @titleClick="itemChange">
           <span slot="title">
-            <a-icon type="appstore"/>
-            <span>资源管理</span>
+            <a-icon type="smile"/>
+            <span>客户管理</span>
           </span>
           <a-menu-item key="/resource/cluster">
-            <router-link to="/resource/cluster">集群全貌</router-link>
+            <router-link to="/resource/cluster">个人管理</router-link>
           </a-menu-item>
           <a-menu-item key="/resource/server">
-            <router-link to="/resource/server">服务器</router-link>
+            <router-link to="/resource/server">常旅客管理</router-link>
           </a-menu-item>
           <a-menu-item key="/resource/disk">
-            <router-link to="/resource/disk">硬盘</router-link>
+            <router-link to="/resource/disk">Vip客户管理</router-link>
           </a-menu-item>
           <a-menu-item key="/resource/device">
-            <router-link to="/resource/device">设备组</router-link>
+            <router-link to="/resource/device">黑名单管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/resource/pool">
-            <router-link to="/resource/pool">存储池</router-link>
+        </a-sub-menu>
+        <a-sub-menu key="/config5" @titleClick="itemChange">
+          <span slot="title">
+            <a-icon type="shopping-cart" />
+            <span>订单管理</span>
+          </span>
+          <a-menu-item key="/config/parameter11">
+            <router-link to="/config/parameter">个人订单</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter12">
+            <router-link to="/config/parameter">团体订单</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter13">
+            <router-link to="/config/parameter">内部订单</router-link>
+          </a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="/config8" @titleClick="itemChange">
+          <span slot="title">
+            <a-icon type="money-collect" />
+            <span>财务管理</span>
+          </span>
+          <a-menu-item key="/config/parameter16">
+            <router-link to="/config/parameter">财务报表</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter17">
+            <router-link to="/config/parameter">清算中心</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter18">
+            <router-link to="/config/parameter">坏账管理</router-link>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="/storage" @titleClick="itemChange">
           <span slot="title">
-            <a-icon type="setting"/>
-            <span>存储服务</span>
+            <a-icon type="rocket" />
+            <span>机队管理</span>
           </span>
           <a-menu-item key="/storage/block">
-            <router-link to="/storage/block">块存储</router-link>
+            <router-link to="/storage/block">客机管理</router-link>
+          </a-menu-item>
+          <a-menu-item key="/storage/block2">
+            <router-link to="/storage/block">货机管理</router-link>
+          </a-menu-item>
+          <a-menu-item key="/storage/block3">
+            <router-link to="/storage/block">引进计划</router-link>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="/protect" @titleClick="itemChange">
           <span slot="title">
-            <a-icon type="setting"/>
-            <span>数据安全</span>
+            <a-icon type="radar-chart" />
+            <span>航班管理</span>
           </span>
           <a-menu-item key="/protect/key">
-            <router-link to="/protect/key">秘钥管理</router-link>
+            <router-link to="/protect/key">国内航班</router-link>
+          </a-menu-item>
+          <a-menu-item key="/protect/key2">
+            <router-link to="/protect/key">国际航班</router-link>
+          </a-menu-item>
+          <a-menu-item key="/protect/key3">
+            <router-link to="/protect/key">包机航班</router-link>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="/config" @titleClick="itemChange">
           <span slot="title">
-            <a-icon type="setting"/>
-            <span>基础配置</span>
+            <a-icon type="disconnect" />
+            <span>航线管理</span>
           </span>
           <a-menu-item key="/config/parameter">
-            <router-link to="/config/parameter">集群参数管理</router-link>
+            <router-link to="/config/parameter">航班计划</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter2">
+            <router-link to="/config/parameter">航线管理</router-link>
+          </a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="/config2" @titleClick="itemChange">
+          <span slot="title">
+            <a-icon type="user" />
+            <span>人员管理</span>
+          </span>
+          <a-menu-item key="/config/parameter3">
+            <router-link to="/config/parameter">客舱服务部</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter4">
+            <router-link to="/config/parameter">飞行中队</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter5">
+            <router-link to="/config/parameter">机务维修部</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter10">
+            <router-link to="/config/parameter">地面服务部</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter9">
+            <router-link to="/config/parameter">信息管理部</router-link>
+          </a-menu-item>
+        </a-sub-menu>
+        <a-sub-menu key="/config3" @titleClick="itemChange">
+          <span slot="title">
+            <a-icon type="message" />
+            <span>服务管理</span>
+          </span>
+          <a-menu-item key="/config/parameter6">
+            <router-link to="/config/parameter">客户投诉</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter7">
+            <router-link to="/config/parameter">客户建议</router-link>
+          </a-menu-item>
+          <a-menu-item key="/config/parameter8">
+            <router-link to="/config/parameter">业务受理</router-link>
           </a-menu-item>
         </a-sub-menu>
       </a-menu>
