@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .overview-wrapper .gutter-box{
     height: 150px;
     background: #fff;

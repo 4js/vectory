@@ -198,7 +198,7 @@ export default {
   components: { ALogo, AUser, APageHeader }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 #basic-layouts {
   .trigger {
     font-size: 18px;

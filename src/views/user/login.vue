@@ -131,7 +131,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .login-wrapper{
   width: 100%;
   min-height: 100%;
@@ -158,6 +158,16 @@ export default {
     width: 350px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    .ant-row input{
+      background: none !important;
+      border-radius: 0;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      &:focus{
+        box-shadow: none;
+      }
+    }
   }
 }
 .user-layout-login {

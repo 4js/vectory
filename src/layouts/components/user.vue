@@ -66,7 +66,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .user-wrapper {
   float: right;
   height: 100%;

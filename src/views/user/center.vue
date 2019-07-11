@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .register-wrapper {
   width: 100%;
   min-height: 100%;

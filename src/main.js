@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import Antd from 'ant-design-vue'
 import { setDocumentTitle } from './utils/domUtils'
-import 'ant-design-vue/dist/antd.css'
+import 'ant-design-vue/dist/antd.less'
 
 Vue.use(Antd)
 Vue.config.productionTip = false

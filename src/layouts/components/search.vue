@@ -10,7 +10,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .search-wrapper {
   display: inline-block;
 }

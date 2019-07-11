@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .ticket-wrapper{
     margin-top: 20px;
     height: 400px;
