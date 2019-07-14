@@ -2,6 +2,8 @@
 
 this is a manage project, base of Vue and ant-design-vue framework.
 
+![avatar](https://raw.githubusercontent.com/4js/vectory/master/src/assets/img/12.png)
+
 ## Project setup
 ```
 npm install

@@ -144,7 +144,7 @@
             <a-icon
               class="trigger"
               :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-              @click="()=> collapsed = !collapsed"
+              @click="toggle"
             />
           </a-col>
           <a-col class="gutter-row" :span="12" style="text-align: right; padding-right: 24px;">
@@ -165,6 +165,7 @@
 import ALogo from "./components/logo";
 import AUser from "./components/user";
 import APageHeader from "../components/PageHeader";
+import { triggerWindowResizeEvent } from '../utils/util'
 export default {
   data() {
     return {
@@ -180,6 +181,10 @@ export default {
     menuChange(v) {
       this.selectedKeys = [v.key];    
     },
+    toggle() {
+      this.collapsed = !this.collapsed;
+      triggerWindowResizeEvent()
+    },
     /*
      *  click dropmenu 
      */
@@ -194,6 +199,7 @@ export default {
   mounted() {
     this.selectedKeys = [this.$route.matched[1].path];
     this.openKeys = [this.$route.matched[0].path];
+    triggerWindowResizeEvent();
   },
   components: { ALogo, AUser, APageHeader }
 };

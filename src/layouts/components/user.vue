@@ -9,7 +9,7 @@
       <!-- <notice-icon class="action"/> -->
       <a-dropdown>
         <span class="action ant-dropdown-link user-dropdown-menu">
-          <a-avatar class="avatar" icon="user" size="small"/>
+          <a-avatar class="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
           <span>{{ username }}</span>
         </span>
         <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
@@ -85,7 +85,7 @@ export default {
 
     .avatar {
       margin: 20px 8px 20px 0;
-      color: #1890ff;
+      // color: #1890ff;
       //   background: hsla(0, 0%, 100%, 0.85);
       vertical-align: middle;
     }
