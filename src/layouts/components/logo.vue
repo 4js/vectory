@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
-    <img v-if="collapsed" src="../../assets/img/logo-mini.png">
-    <img v-else src="../../assets/img/logo.png">
+    <img v-if="collapsed" src="../../assets/img/logo-mini.png" />
+    <img v-else src="../../assets/img/logo.png" />
   </div>
 </template>
 <script>
@@ -25,7 +25,7 @@ export default {
   img {
     height: 32px;
   }
-  span{
+  span {
     color: #eee;
     padding-left: 15px;
     line-height: 30px;

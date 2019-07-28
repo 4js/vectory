@@ -1,6 +1,6 @@
 <template>
   <div class="search-wrapper">
-    <a-icon type="search"/>
+    <a-icon type="search" />
   </div>
 </template>
 <script>

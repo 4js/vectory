@@ -2,29 +2,35 @@
   <a-layout id="basic-layouts" :style="{ height: '100vh' }">
     <a-layout-sider :trigger="null" collapsible v-model="collapsed">
       <a-logo :collapsed="collapsed"></a-logo>
-      <a-menu theme="dark" mode="inline" :selectedKeys="selectedKeys" :openKeys="openKeys" @select="menuChange">
+      <a-menu
+        theme="dark"
+        mode="inline"
+        :selectedKeys="selectedKeys"
+        :openKeys="openKeys"
+        @select="menuChange"
+      >
         <a-menu-item key="/dashboard">
           <router-link to="/dashboard">
             <a-icon type="dashboard" />
             <span>概览</span>
           </router-link>
         </a-menu-item>
-        <a-sub-menu key="/resource" @titleClick="itemChange">
+        <a-sub-menu key="/custom" @titleClick="itemChange">
           <span slot="title">
-            <a-icon type="smile"/>
+            <a-icon type="smile" />
             <span>客户管理</span>
           </span>
-          <a-menu-item key="/resource/cluster">
-            <router-link to="/resource/cluster">个人管理</router-link>
+          <a-menu-item key="/custom/common">
+            <router-link to="/custom/common">个人管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/resource/server">
-            <router-link to="/resource/server">常旅客管理</router-link>
+          <a-menu-item key="/custom/flyer">
+            <router-link to="/custom/flyer">常旅客管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/resource/disk">
-            <router-link to="/resource/disk">Vip客户管理</router-link>
+          <a-menu-item key="/custom/vip">
+            <router-link to="/custom/vip">Vip客户管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/resource/device">
-            <router-link to="/resource/device">黑名单管理</router-link>
+          <a-menu-item key="/custom/black">
+            <router-link to="/custom/black">黑名单管理</router-link>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="/config5" @titleClick="itemChange">
@@ -140,23 +146,21 @@
     <a-layout>
       <a-layout-header style="background: #fff; padding: 0; minHeight: '100vh'">
         <a-row>
-          <a-col class="gutter-row" :span="12">
+          <a-col class="gutter-row" :span="12" style="display: flex;">
             <a-icon
               class="trigger"
               :type="collapsed ? 'menu-unfold' : 'menu-fold'"
               @click="toggle"
             />
+            <a-page-header :route="$route"></a-page-header>
           </a-col>
           <a-col class="gutter-row" :span="12" style="text-align: right; padding-right: 24px;">
             <a-user></a-user>
           </a-col>
         </a-row>
       </a-layout-header>
-      <a-layout-content
-        :style="{ margin: '24px 16px' }"
-      >
-        <a-page-header :route="$route"></a-page-header>
-        <router-view/>
+      <a-layout-content :style="{ margin: '24px 16px' }">
+        <router-view />
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -165,7 +169,7 @@
 import ALogo from "./components/logo";
 import AUser from "./components/user";
 import APageHeader from "../components/PageHeader";
-import { triggerWindowResizeEvent } from '../utils/util'
+import { triggerWindowResizeEvent } from "../utils/util";
 export default {
   data() {
     return {
@@ -179,18 +183,18 @@ export default {
      *  select meun item
      */
     menuChange(v) {
-      this.selectedKeys = [v.key];    
+      this.selectedKeys = [v.key];
     },
     toggle() {
       this.collapsed = !this.collapsed;
-      triggerWindowResizeEvent()
+      triggerWindowResizeEvent();
     },
     /*
-     *  click dropmenu 
+     *  click dropmenu
      */
-    itemChange (v) {
+    itemChange(v) {
       if (this.openKeys[0] === v.key) {
-        this.openKeys = []
+        this.openKeys = [];
       } else {
         this.openKeys = [v.key];
       }
@@ -212,6 +216,8 @@ export default {
     padding: 0 24px;
     cursor: pointer;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
     &:hover {
       color: #1890ff;
     }

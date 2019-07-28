@@ -23,4 +23,8 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
+.main-box{
+  padding: 20px;
+  background: #fff;
+}
 </style>

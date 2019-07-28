@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import Aoverview from './components/overview.vue'
-import Aticket from './components/ticket.vue'
+import Aoverview from "./components/overview.vue";
+import Aticket from "./components/ticket.vue";
 export default {
-  name: 'dashboard',
+  name: "dashboard",
   components: {
     Aoverview,
     Aticket
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
-.dashboard-wrapper{
+.dashboard-wrapper {
 }
 </style>

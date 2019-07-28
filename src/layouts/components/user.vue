@@ -9,26 +9,29 @@
       <!-- <notice-icon class="action"/> -->
       <a-dropdown>
         <span class="action ant-dropdown-link user-dropdown-menu">
-          <a-avatar class="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+          <a-avatar
+            class="avatar"
+            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          />
           <span>{{ username }}</span>
         </span>
         <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
           <a-menu-item key="0">
             <router-link to="/user/center">
-              <a-icon type="user"/>
+              <a-icon type="user" />
               <span>个人中心</span>
             </router-link>
           </a-menu-item>
           <a-menu-item key="1">
             <router-link to="/user/center">
-              <a-icon type="setting"/>
+              <a-icon type="setting" />
               <span>账户设置</span>
             </router-link>
           </a-menu-item>
-          <a-menu-divider/>
+          <a-menu-divider />
           <a-menu-item key="3">
             <a href="javascript:;" @click="logout">
-              <a-icon type="logout"/>
+              <a-icon type="logout" />
               <span>退出登录</span>
             </a>
           </a-menu-item>
@@ -39,7 +42,7 @@
 </template>
 <script>
 // import loading from '../../mixins/loading'
-import { setTimeout } from 'timers';
+import { setTimeout } from "timers";
 export default {
   data() {
     return {
@@ -47,21 +50,21 @@ export default {
     };
   },
   methods: {
-    logout () {
+    logout() {
       /* eslint-disable */
       // console.log(this.rootParent)
-      this.logoutSuccess()
+      this.logoutSuccess();
     },
-    logoutSuccess () {
+    logoutSuccess() {
       // 延迟 1 秒显示欢迎信息
       setTimeout(() => {
         this.$notification.success({
-          message: '成功',
-          description: '退出登录成功，欢迎再来'
-        })
-        this.$router.push('/login')
+          message: "成功",
+          description: "退出登录成功，欢迎再来"
+        });
+        this.$router.push("/login");
         // this.rootParent.loadingEnd()
-      }, 1000)
+      }, 1000);
     }
   }
 };
