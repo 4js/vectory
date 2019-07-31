@@ -1,6 +1,6 @@
 <template>
-  <div class="main-box black-custom">
-      黑名单管理
+  <div class="main-box entrance-plane">
+      引进计划
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 // import ALine from './components/line'
 // import APoint from './components/point'
 export default {
-  name: 'blackCustom',
+  name: 'entrancePlane',
   components: {
     //   APie,
     //   ALine,

@@ -33,49 +33,49 @@
             <router-link to="/custom/black">黑名单管理</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/config5" @titleClick="itemChange">
+        <a-sub-menu key="/order" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="shopping-cart" />
             <span>订单管理</span>
           </span>
-          <a-menu-item key="/config/parameter11">
-            <router-link to="/config/parameter">个人订单</router-link>
+          <a-menu-item key="/order/one">
+            <router-link to="/order/one">个人订单</router-link>
           </a-menu-item>
-          <a-menu-item key="/config/parameter12">
-            <router-link to="/config/parameter">团体订单</router-link>
+          <a-menu-item key="/order/group">
+            <router-link to="/order/group">团体订单</router-link>
           </a-menu-item>
-          <a-menu-item key="/config/parameter13">
-            <router-link to="/config/parameter">内部订单</router-link>
+          <a-menu-item key="/order/inside">
+            <router-link to="/order/inside">内部订单</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/config8" @titleClick="itemChange">
+        <a-sub-menu key="/financial" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="money-collect" />
             <span>财务管理</span>
           </span>
-          <a-menu-item key="/config/parameter16">
-            <router-link to="/config/parameter">财务报表</router-link>
+          <a-menu-item key="/financial/report">
+            <router-link to="/financial/report">财务报表</router-link>
           </a-menu-item>
-          <a-menu-item key="/config/parameter17">
-            <router-link to="/config/parameter">清算中心</router-link>
+          <a-menu-item key="/financial/settle">
+            <router-link to="/financial/settle">清算中心</router-link>
           </a-menu-item>
-          <a-menu-item key="/config/parameter18">
-            <router-link to="/config/parameter">坏账管理</router-link>
+          <a-menu-item key="/financial/debt">
+            <router-link to="/financial/debt">坏账管理</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/storage" @titleClick="itemChange">
+        <a-sub-menu key="/plane" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="rocket" />
             <span>机队管理</span>
           </span>
-          <a-menu-item key="/storage/block">
-            <router-link to="/storage/block">客机管理</router-link>
+          <a-menu-item key="/plane/visitor">
+            <router-link to="/plane/visitor">客机管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/storage/block2">
-            <router-link to="/storage/block">货机管理</router-link>
+          <a-menu-item key="/plane/freight">
+            <router-link to="/plane/freight">货机管理</router-link>
           </a-menu-item>
-          <a-menu-item key="/storage/block3">
-            <router-link to="/storage/block">引进计划</router-link>
+          <a-menu-item key="/plane/entrance">
+            <router-link to="/plane/entrance">引进计划</router-link>
           </a-menu-item>
         </a-sub-menu>
         <a-sub-menu key="/protect" @titleClick="itemChange">
@@ -146,7 +146,7 @@
     <a-layout>
       <a-layout-header style="background: #fff; padding: 0; minHeight: '100vh'">
         <a-row>
-          <a-col class="gutter-row" :span="12" style="display: flex;">
+          <a-col class="gutter-row" :span="12" style="display: flex;line-height:64px;">
             <a-icon
               class="trigger"
               :type="collapsed ? 'menu-unfold' : 'menu-fold'"
@@ -208,7 +208,7 @@ export default {
   components: { ALogo, AUser, APageHeader }
 };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 #basic-layouts {
   .trigger {
     font-size: 18px;

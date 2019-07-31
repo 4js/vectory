@@ -1,6 +1,6 @@
 <template>
-  <div class="main-box black-custom">
-      黑名单管理
+  <div class="main-box report-financial">
+      财务报表
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 // import ALine from './components/line'
 // import APoint from './components/point'
 export default {
-  name: 'blackCustom',
+  name: 'reportFinancial',
   components: {
     //   APie,
     //   ALine,

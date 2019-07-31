@@ -1,6 +1,6 @@
 <template>
-  <div class="main-box black-custom">
-      黑名单管理
+  <div class="main-box debt-financial">
+      坏账处理
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 // import ALine from './components/line'
 // import APoint from './components/point'
 export default {
-  name: 'blackCustom',
+  name: 'debtFinancial',
   components: {
     //   APie,
     //   ALine,
