@@ -78,34 +78,34 @@
             <router-link to="/plane/entrance">引进计划</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/protect" @titleClick="itemChange">
+        <a-sub-menu key="/flight" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="radar-chart" />
             <span>航班管理</span>
           </span>
-          <a-menu-item key="/protect/key">
-            <router-link to="/protect/key">国内航班</router-link>
+          <a-menu-item key="/flight/domestic">
+            <router-link to="/flight/domestic">国内航班</router-link>
           </a-menu-item>
-          <a-menu-item key="/protect/key2">
-            <router-link to="/protect/key">国际航班</router-link>
+          <a-menu-item key="/flight/internal">
+            <router-link to="/flight/internal">国际航班</router-link>
           </a-menu-item>
-          <a-menu-item key="/protect/key3">
-            <router-link to="/protect/key">包机航班</router-link>
+          <a-menu-item key="/flight/wrap">
+            <router-link to="/flight/wrap">包机航班</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/config" @titleClick="itemChange">
+        <a-sub-menu key="/airline" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="disconnect" />
             <span>航线管理</span>
           </span>
-          <a-menu-item key="/config/parameter">
-            <router-link to="/config/parameter">航班计划</router-link>
+          <a-menu-item key="/airline/plan">
+            <router-link to="/airline/plan">航班计划</router-link>
           </a-menu-item>
-          <a-menu-item key="/config/parameter2">
-            <router-link to="/config/parameter">航线管理</router-link>
+          <a-menu-item key="/airline/line">
+            <router-link to="/airline/line">航线管理</router-link>
           </a-menu-item>
         </a-sub-menu>
-        <a-sub-menu key="/config2" @titleClick="itemChange">
+        <!-- <a-sub-menu key="/config2" @titleClick="itemChange">
           <span slot="title">
             <a-icon type="user" />
             <span>人员管理</span>
@@ -140,13 +140,13 @@
           <a-menu-item key="/config/parameter8">
             <router-link to="/config/parameter">业务受理</router-link>
           </a-menu-item>
-        </a-sub-menu>
+        </a-sub-menu> -->
       </a-menu>
     </a-layout-sider>
     <a-layout>
       <a-layout-header style="background: #fff; padding: 0; minHeight: '100vh'">
         <a-row>
-          <a-col class="gutter-row" :span="12" style="display: flex;line-height:64px;">
+          <a-col class="gutter-row" :span="12" style="display: flex;height:64px;line-height:64px;">
             <a-icon
               class="trigger"
               :type="collapsed ? 'menu-unfold' : 'menu-fold'"
@@ -212,7 +212,6 @@ export default {
 #basic-layouts {
   .trigger {
     font-size: 18px;
-    line-height: 64px;
     padding: 0 24px;
     cursor: pointer;
     transition: color 0.3s;

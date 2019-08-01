@@ -7,38 +7,19 @@ import orderRoute from './modules/order'
 import customRoute from './modules/custom'
 import financialRoute from './modules/financial'
 import planeRoute from './modules/plane'
+import flightRoute from './modules/flight'
+import airlineRoute from './modules/airline'
 /**
  * 基础路由
  * @type { *[] }
  */
 export const constantRouterMap = [
-  // {
-  //   path: '/user',
-  //   component: UserLayout,
-  //   redirect: '/user/login',
-  //   hidden: true,
-  //   children: [
-  //     {
-  //       path: 'login',
-  //       name: 'login',
-  //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
-  //     },
-  //     {
-  //       path: 'register',
-  //       name: 'register',
-  //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
-  //     },
-  //     {
-  //       path: 'register-result',
-  //       name: 'registerResult',
-  //       component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
-  //     }
-  //   ]
-  // },
   orderRoute,
   customRoute,
   financialRoute,
   planeRoute,
+  flightRoute,
+  airlineRoute,
   {
     path: '/storage',
     component: BasicLayouts,
