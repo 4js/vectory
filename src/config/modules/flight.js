@@ -3,7 +3,7 @@ import {
   } from '@/layouts'
   
   export default {
-    path: '/flight',
+    path: 'flight',
     component: BasicLayouts,
     name: '航班管理',
     meta: {

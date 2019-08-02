@@ -3,7 +3,7 @@ import {
 } from '@/layouts'
 
 export default {
-  path: '/custom',
+  path: 'custom',
   component: BasicLayouts,
   name: '客户管理',
   meta: {

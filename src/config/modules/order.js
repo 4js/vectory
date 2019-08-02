@@ -3,7 +3,7 @@ import {
   } from '@/layouts'
 
 export default {
-  path: '/order',
+  path: 'order',
   component: BasicLayouts,
   name: '订单管理',
   meta: {

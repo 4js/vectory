@@ -3,7 +3,7 @@ import {
   } from '@/layouts'
 
 export default {
-  path: '/financial',
+  path: 'financial',
   component: BasicLayouts,
   name: '财务管理',
   meta: {
