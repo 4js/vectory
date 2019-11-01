@@ -93,11 +93,11 @@ const columns = [
   },
   {
     title: "联系电话",
-    dataIndex: "address"
+    dataIndex: "telephone"
   },
   {
     title: "客户级别",
-    dataIndex: "address"
+    dataIndex: "level"
   }
 ];
 

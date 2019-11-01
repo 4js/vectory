@@ -1,10 +1,10 @@
 import {
-    BasicLayouts
+  BlankLayouts
   } from '@/layouts'
 
 export default {
   path: 'order',
-  component: BasicLayouts,
+  component: BlankLayouts,
   name: '订单管理',
   meta: {
     title: '订单管理'
