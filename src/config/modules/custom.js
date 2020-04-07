@@ -1,10 +1,10 @@
 import {
-  BasicLayouts
+  BlankLayouts
 } from '@/layouts'
 
 export default {
-  path: '/custom',
-  component: BasicLayouts,
+  path: 'custom',
+  component: BlankLayouts,
   name: '客户管理',
   meta: {
     title: '客户管理'

@@ -93,7 +93,7 @@ const columns = [
   },
   {
     title: "联系电话",
-    dataIndex: "tel"
+    dataIndex: "telephone"
   },
   {
     title: "客户级别",
@@ -107,7 +107,9 @@ for (let i = 0; i < 46; i++) {
     key: i,
     name: `Edward King ${i}`,
     age: 32,
-    address: `London, Park Lane no. ${i}`
+    address: `London, Park Lane no. ${i}`,
+    telephone: '122424',
+    level: 1
   });
 }
 export default {

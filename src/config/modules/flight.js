@@ -1,10 +1,10 @@
 import {
-    BasicLayouts
+  BlankLayouts
   } from '@/layouts'
   
   export default {
-    path: '/flight',
-    component: BasicLayouts,
+    path: 'flight',
+    component: BlankLayouts,
     name: '航班管理',
     meta: {
       title: '航班管理'

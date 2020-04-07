@@ -171,7 +171,7 @@
 <script>
 import ALogo from "./components/logo";
 import AUser from "./components/user";
-import APageHeader from "../components/PageHeader";
+import APageHeader from "./components/pageHeader";
 import { triggerWindowResizeEvent } from "../utils/util";
 export default {
   data() {
@@ -204,8 +204,14 @@ export default {
     }
   },
   mounted() {
-    this.selectedKeys = [this.$route.matched[1].path];
-    this.openKeys = [this.$route.matched[0].path];
+    // 点击2级菜单
+    if (this.$route.matched.length > 2) {
+      this.selectedKeys = [this.$route.matched[2].path];
+      this.openKeys = [this.$route.matched[1].path];
+    } else {
+      this.selectedKeys = [this.$route.matched[1].path];
+      this.openKeys = [this.$route.matched[1].path];
+    }
     triggerWindowResizeEvent();
   },
   components: { ALogo, AUser, APageHeader }

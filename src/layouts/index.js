@@ -1,2 +1,3 @@
 import BasicLayouts from './BasicLayouts'
-export { BasicLayouts }
+import BlankLayouts from './BlankLayouts'
+export { BasicLayouts, BlankLayouts }

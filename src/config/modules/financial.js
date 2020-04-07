@@ -1,10 +1,10 @@
 import {
-    BasicLayouts
+  BlankLayouts
   } from '@/layouts'
 
 export default {
-  path: '/financial',
-  component: BasicLayouts,
+  path: 'financial',
+  component: BlankLayouts,
   name: '财务管理',
   meta: {
     title: '财务管理'
