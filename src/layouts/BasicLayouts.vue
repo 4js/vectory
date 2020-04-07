@@ -98,6 +98,9 @@
             <a-icon type="disconnect" />
             <span>航线管理</span>
           </span>
+          <a-menu-item key="/airline/city">
+            <router-link to="/airline/city">城市管理</router-link>
+          </a-menu-item>
           <a-menu-item key="/airline/plan">
             <router-link to="/airline/plan">航班计划</router-link>
           </a-menu-item>

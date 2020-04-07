@@ -9,8 +9,7 @@
           <a-button
             class="btn-operate"
             type="primary"
-            @click="start"
-            :loading="loading"
+            @click="addModalVisible=true"
           >新增</a-button>
           <a-button
             class="btn-operate"
@@ -61,64 +60,103 @@
             </a-dropdown>
           </a-button-group>
         </div>
-        <!-- <span style="margin-left: 8px">
-        <template v-if="hasSelected">
-          {{`Selected ${selectedRowKeys.length} items`}}
-        </template>
-        </!-->
       </div>
       <a-table
         :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
         :columns="columns"
         :dataSource="data"
-      />
+      >
+         <span slot="level" slot-scope="text, record">
+            <a v-if="record.level===1">4F</a>
+            <a v-if="record.level===2">4E</a>
+            <a v-if="record.level===3">4D</a>
+            <a v-if="record.level===4">3D</a>
+        </span>
+      </a-table>
+        <a-modal title="新增城市" cancelText="取消" okText="确定" v-model="addModalVisible" @ok="addModalHandleOk" @cancel="addModalVisible=false">
+            <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+                <a-form-item label="城市" :label-col="labelCol" :wrapper-col="wrapperCol">
+									<a-input
+											v-decorator="['city_name', { rules: [{ required: true, message: 'Please input your note!' }] }]"
+									/>
+                </a-form-item>
+								<a-form-item label="三字码" :label-col="labelCol" :wrapper-col="wrapperCol">
+									<a-input
+											v-decorator="['city_iata', { rules: [{ required: true, message: 'Please input your note!' }] }]"
+									/>
+                </a-form-item>
+								<a-form-item label="机场" :label-col="labelCol" :wrapper-col="wrapperCol">
+									<a-input
+											v-decorator="['city_airport', { rules: [{ required: true, message: 'Please input your note!' }] }]"
+									/>
+                </a-form-item>
+                <a-form-item label="级别" :label-col="labelCol" :wrapper-col="wrapperCol">
+									<a-select
+											v-decorator="[
+											'level',
+											{ rules: [{ required: true, message: 'Please select your gender!' }] },
+											]"
+											placeholder="Select a option and change input text above"
+									>
+											<a-select-option value="1">4F</a-select-option>
+											<a-select-option value="2">4E</a-select-option>
+											<a-select-option value="3">4D</a-select-option>
+											<a-select-option value="4">3D</a-select-option>
+									</a-select>
+                </a-form-item>
+            </a-form>
+        </a-modal>
     </div>
   </div>
 </template>
 
 <script>
+import { queryCity, addCity } from '@/api/api'
+
 import ASearch from "./components/search";
 const columns = [
   {
-    title: "姓名",
-    dataIndex: "name"
+    title: "ID",
+    key: 'city_id',
+    dataIndex: "city_id"
   },
   {
-    title: "年龄",
-    dataIndex: "age"
+    title: "城市",
+    key: 'city_name',
+    dataIndex: "city_name"
   },
   {
-    title: "联系地址",
-    dataIndex: "address"
+    title: "三字码",
+    key: 'city_iata',
+    dataIndex: "city_iata"
   },
   {
-    title: "联系电话",
-    dataIndex: "tel"
+    title: "机场全称",
+    key: 'city_airport',
+    dataIndex: "city_airport"
   },
   {
-    title: "客户级别",
-    dataIndex: "level"
+    title: "级别",
+    dataIndex: "level",
+    key: 'level',
+    scopedSlots: { customRender: 'level' }
   }
 ];
 
-const data = [];
-for (let i = 0; i < 46; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`
-  });
-}
 export default {
-  name: "commonCustom",
+  name: "airlineCity",
   data() {
     return {
-      data,
       columns,
+      data: [],
       selectedRowKeys: [], // Check here to configure the default column
       loading: false,
-      showSearch: false
+      showSearch: false,
+      addModalVisible: false,
+			formLayout: 'horizontal',
+			labelCol: {span: 4},
+			wrapperCol: {span: 20},
+      form: this.$form.createForm(this, { name: 'coordinated' })
     };
   },
   components: {
@@ -128,6 +166,9 @@ export default {
     hasSelected() {
       return this.selectedRowKeys.length > 0;
     }
+  },
+  created(){
+    this.getAllCity()
   },
   methods: {
     handleChangeSearch() {
@@ -144,6 +185,26 @@ export default {
     onSelectChange(selectedRowKeys) {
       console.log("selectedRowKeys changed: ", selectedRowKeys);
       this.selectedRowKeys = selectedRowKeys;
+		},
+		getAllCity(){
+			queryCity().then(res => {
+				res.forEach(item => item.key = item.city_id) // table组件加key
+				this.data = res
+			})
+		},
+    addModalHandleOk(e){
+			let _this = this
+			e.preventDefault();
+      this.form.validateFields((error, values) => {
+				if(!error){
+					// level要转成数字
+					addCity(Object.assign(values, { level: Number(values.level) })).then(res => {
+						_this.$message.success('添加成功');
+						_this.getAllCity();
+						_this.addModalVisible = false;
+					})
+				}
+      });
     }
   }
 };

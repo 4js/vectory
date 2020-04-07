@@ -66,7 +66,7 @@
 </template>
 
 <script>
-
+import { login } from '@/api/api';
 export default {
   data () {
     return {
@@ -90,10 +90,14 @@ export default {
         state
       } = this
       state.loginBtn = true
-      validateFields(['username', 'password'], { force: true }, (err, values) => {
+      validateFields(['username', 'password'], { force: true }, async (err, values) => {
         if (!err) {
-          const {username, password} = values
+          const {username, password} = values;
+          console.log(values);
+          // const res = await login(values);
+          // console.log(res);
           // loginParams.password = md5(values.password)
+
           if (username === 'admin' && password === 'admin') {
             this.loginSuccess()
           } else {

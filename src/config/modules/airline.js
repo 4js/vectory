@@ -25,6 +25,14 @@ import {
           title: '航线管理'
         },
         component: () => import('@/views/airline/line/index')
+      },
+      {
+        path: 'city',
+        name: '城市管理',
+        meta: {
+          title: '城市管理'
+        },
+        component: () => import('@/views/airline/city/index')
       }
     ]
   }
